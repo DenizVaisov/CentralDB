@@ -8,19 +8,23 @@ import java.util.UUID;
 @Entity
 @Table(name = "nomenclature")
 public class Nomenclature {
-    // Первичный ключ, называть строго как в таблице
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "nomenclatureGenerator")
     @SequenceGenerator(name = "nomenclatureGenerator", sequenceName = "nomenclature_seq", allocationSize = 1)
     private Long id;
-    private UUID uid;
-    // Поля, называть строго как в таблице
+
     @Column
-    private String name;
+    private UUID uid;
+
+    @Column
+    private String nameOfProduct;
+
     @Column
     private String unitCode;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date createDate;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date modifyDate;
 
@@ -38,14 +42,6 @@ public class Nomenclature {
 
     public void setUid(UUID uid) {
         this.uid = uid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getUnitCode() {
@@ -70,5 +66,13 @@ public class Nomenclature {
 
     public void setModifyDate(Date modifyDate) {
         this.modifyDate = modifyDate;
+    }
+
+    public String getNameOfProduct() {
+        return nameOfProduct;
+    }
+
+    public void setNameOfProduct(String nameOfProduct) {
+        this.nameOfProduct = nameOfProduct;
     }
 }

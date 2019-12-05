@@ -8,11 +8,12 @@ import java.util.UUID;
 @Entity
 @Table(name = "offer")
 public class Offer {
-    // Первичный ключ, называть строго как в таблице
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "offerGenerator")
     @SequenceGenerator(name = "offerGenerator", sequenceName = "offer_seq", allocationSize = 1)
     private Long id;
+
+    @Column
     private UUID uid;
 
     @ManyToOne
@@ -21,25 +22,30 @@ public class Offer {
     @ManyToOne
     private Organization organization;
 
-    // Поля, называть строго как в таблице
+    @Column
     private Float priceOfProduct;
+
+    @Column
     private Float countOfProduct;
 
+    @Column
     private String unitCode;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date createDate;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date modifyDate;
 
     @Temporal(TemporalType.DATE)
-    private Date dateOfExplonation;
+    private Date dateOfPerformance;
 
-    public Date getDateOfExplonation() {
-        return dateOfExplonation;
+    public Date getDateOfPerformance() {
+        return dateOfPerformance;
     }
 
-    public void setDateOfExplonation(Date dateOfExplonation) {
-        this.dateOfExplonation = dateOfExplonation;
+    public void setDateOfPerformance(Date dateOfPerformance) {
+        this.dateOfPerformance = dateOfPerformance;
     }
 
     public Long getId() {

@@ -7,25 +7,29 @@ import java.util.UUID;
 @Entity
 @Table(name = "organization")
 public class Organization {
-    // Первичный ключ, называть строго как в таблице
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "organizationGenerator")
     @SequenceGenerator(name = "organizationGenerator", sequenceName = "organization_seq", allocationSize = 1)
     private Long id;
 
+    @Column
     private UUID uid;
 
-    // Поля, называть строго как в таблице
     @Column
-    private String nameOfOrg;
+    private String nameOfOrganization;
+
     @Column
-    private String adressOfOrg;
+    private String adressOfOrganization;
+
     @Column
-    private Float numberOfOrg;
+    private Float numberOfOrganization;
+
     @Column
     private String inn;
+
     @Column
     private String kpp;
+
     @Column
     private String ogrn;
 
@@ -45,28 +49,28 @@ public class Organization {
         this.uid = uid;
     }
 
-    public String getNameOfOrg() {
-        return nameOfOrg;
+    public String getNameOfOrganization() {
+        return nameOfOrganization;
     }
 
-    public void setNameOfOrg(String nameOfOrg) {
-        this.nameOfOrg = nameOfOrg;
+    public void setNameOfOrganization(String nameOfOrganization) {
+        this.nameOfOrganization = nameOfOrganization;
     }
 
-    public String getAdressOfOrg() {
-        return adressOfOrg;
+    public String getAdressOfOrganization() {
+        return adressOfOrganization;
     }
 
-    public void setAdressOfOrg(String adressOfOrg) {
-        this.adressOfOrg = adressOfOrg;
+    public void setAdressOfOrganization(String adressOfOrganization) {
+        this.adressOfOrganization = adressOfOrganization;
     }
 
-    public Float getNumberOfOrg() {
-        return numberOfOrg;
+    public Float getNumberOfOrganization() {
+        return numberOfOrganization;
     }
 
-    public void setNumberOfOrg(Float numberOfOrg) {
-        this.numberOfOrg = numberOfOrg;
+    public void setNumberOfOrganization(Float numberOfOrganization) {
+        this.numberOfOrganization = numberOfOrganization;
     }
 
     public String getInn() {

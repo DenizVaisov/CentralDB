@@ -12,12 +12,12 @@ import java.util.UUID;
 @Entity
 @Table(name = "contract")
 public class Contract {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "contractGenerator")
     @SequenceGenerator(name = "contractGenerator", sequenceName = "contract_seq", allocationSize = 1)
     private Long id;
 
+    @Column
     private UUID uid;
 
     @ManyToOne
@@ -48,8 +48,9 @@ public class Contract {
 
     /** Срок исполнения */
     @Temporal(TemporalType.DATE)
-    private Date dateOfExplonation;
+    private Date dateOfPerformance;
 
+    @Column
     /** Факт исполнения */
     private Boolean status;
 
@@ -133,19 +134,19 @@ public class Contract {
         this.modifyDate = modifyDate;
     }
 
-    public Date getDateOfExplonation() {
-        return dateOfExplonation;
-    }
-
-    public void setDateOfExplonation(Date dateOfExplonation) {
-        this.dateOfExplonation = dateOfExplonation;
-    }
-
     public Boolean getStatus() {
         return status;
     }
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public Date getDateOfPerformance() {
+        return dateOfPerformance;
+    }
+
+    public void setDateOfPerformance(Date dateOfPerformance) {
+        this.dateOfPerformance = dateOfPerformance;
     }
 }
