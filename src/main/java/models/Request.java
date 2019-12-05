@@ -33,5 +33,84 @@ public class Request {
     @Temporal(TemporalType.DATE)
     private Date dateOfExplonation;
 
-    private Boolean status;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public UUID getUid() {
+        return uid;
+    }
+
+    public void setUid(UUID uid) {
+        this.uid = uid;
+    }
+
+    public Nomenclature getNomenclature() {
+        return nomenclature;
+    }
+
+    public void setNomenclature(Nomenclature nomenclature) {
+        this.nomenclature = nomenclature;
+    }
+
+    public Organization getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
+    }
+
+    public Float getPriceOfProduct() {
+        return priceOfProduct;
+    }
+
+    public void setPriceOfProduct(Float priceOfProduct) {
+        this.priceOfProduct = priceOfProduct;
+    }
+
+    public Float getCountOfProduct() {
+        return countOfProduct;
+    }
+
+    public void setCountOfProduct(Float countOfProduct) {
+        this.countOfProduct = countOfProduct;
+    }
+
+    public String getUnitCode() {
+        return unitCode;
+    }
+
+    public void setUnitCode(String unitCode) {
+        this.unitCode = unitCode;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getModifyDate() {
+        return modifyDate;
+    }
+
+    public void setModifyDate(Date modifyDate) {
+        this.modifyDate = modifyDate;
+    }
+
+    public Date getDateOfExplonation() {
+        return dateOfExplonation;
+    }
+
+    public void setDateOfExplonation(Date dateOfExplonation) {
+        this.dateOfExplonation = dateOfExplonation;
+    }
 }

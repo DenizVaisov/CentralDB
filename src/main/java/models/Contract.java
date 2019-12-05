@@ -17,6 +17,7 @@ public class Contract {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "contractGenerator")
     @SequenceGenerator(name = "contractGenerator", sequenceName = "contract_seq", allocationSize = 1)
     private Long id;
+
     private UUID uid;
 
     @ManyToOne
@@ -28,23 +29,28 @@ public class Contract {
     @ManyToOne
     private Request request;
 
-    // Поля, называть строго как в таблице
-    @Column
-    private Float budgetOfContract;
+    /** Стоимость контракта */
     @Column
     private Float cost;
+
     @Column
     private Float count;
+
+    /** Код единицы измерения */
     @Column
     private String unitCode;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date createDate;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date modifyDate;
 
+    /** Срок исполнения */
     @Temporal(TemporalType.DATE)
     private Date dateOfExplonation;
 
+    /** Факт исполнения */
     private Boolean status;
 
     public Long getId() {
@@ -85,14 +91,6 @@ public class Contract {
 
     public void setRequest(Request request) {
         this.request = request;
-    }
-
-    public Float getBudgetOfContract() {
-        return budgetOfContract;
-    }
-
-    public void setBudgetOfContract(Float budgetOfContract) {
-        this.budgetOfContract = budgetOfContract;
     }
 
     public Float getCost() {
